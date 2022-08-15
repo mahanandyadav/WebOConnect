@@ -56,30 +56,51 @@ const UserDetails = () => {
 
 
   return (
-    <>
-      <h1>User Details</h1>
+    <main className='container'>
+    <div className='container-box'>
+
+      <h1 className='heading'>User Details</h1>
+      <div className="form-item">
+
       <p>name</p>
       <p>{name}</p>
+      </div>
+      <div className="form-item">
+
       <p>email</p>
       <p>{email}</p>
+      </div>
+      <div className="form-item">
       <p>phone</p>
+        
       <p>{phone}</p>
+      </div>
+      <div className="form-item">
+
       <p>gender</p>
       <p>{gender}</p>
+      </div>
+      <div className="form-item">
+
       <p>status</p>
       <p>{status}</p>
+      </div>
+      <div className="form-btn">
+
       <Link
         to='../update'
-      >Update Details
+        >Update Details
       </Link>
 
 
       <button
         type='button'
         onClick={()=>navigate('../update_password')}
-      >Update Password</button>
+        >Update Password</button>
+        </div>
 
-    </>
+        </div>
+    </main>
   );
 };
 

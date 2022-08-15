@@ -88,37 +88,53 @@ const PasswordUpdate = () => {
 
 
   return (
-    <>
-      <h1>Password Update</h1>
+    <main className='container'>
+      <div className="container-box">
+
+      <h1 className='heading'>Password Update</h1>
       <p>{user.email}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
+        <div className="form-item">
+
         <label> Old password </label>
         <input
           value={user.password}
           name='password'
           onChange={handleOnChange}
-        />
+          />
+          </div>
+          <div className="form-item">
+
         <label> new  password </label>
         <input
           value={user.new_password}
           name='new_password'
           onChange={handleOnChange}
-        />
+          />
+          </div>
+          <div className="form-item">
+
         <label> Conform  password </label>
         <input
           value={user.conform_password}
           name='conform_password'
           onChange={handleOnChange}
-        />
+          />
+          </div>
+
+          <div className="form-btn">
+
 
         <button
           disabled={(user.new_password !== user.conform_password || user.new_password.length < 1) || user.password.length<1}
-        >submit</button>
+          >submit</button>
         <button type='button' onClick={() => navigate('../details')}>Goto details</button>
+          </div>
       </form>
 
 
-    </>
+          </div>
+    </main>
   );
 };
 

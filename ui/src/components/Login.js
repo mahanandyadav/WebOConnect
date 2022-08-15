@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import constant from '../config'
-import { useNavigate ,Outlet} from 'react-router-dom'
+import { useNavigate, Outlet } from 'react-router-dom'
 const defaultUser = {
   email: 'mny@gmail.com',
   password: '123456'
@@ -34,11 +34,11 @@ const Login = () => {
 
       if (res.ok) {
         // alert('Login successfully')
-        let {user,token}=await res.json()
-        console.log(user,token)
-        sessionStorage.setItem('userToken',token)
-        sessionStorage.setItem('userName',user.name)
-        navigate('/user/details',{replace:true})
+        let { user, token } = await res.json()
+        console.log(user, token)
+        sessionStorage.setItem('userToken', token)
+        sessionStorage.setItem('userName', user.name)
+        navigate('/user/details', { replace: true })
       } else {
         console.log(res)
       }
@@ -55,33 +55,44 @@ const Login = () => {
 
 
   return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <main className='container'>
+      <div className="container-box">
 
-        <label> email </label>
-        <input
-          value={user.email}
-          name='email'
-          onChange={handleOnChange}
-        />
-        <label> password </label>
-        <input
-          value={user.password}
-          name='password'
-          onChange={handleOnChange}
-        />
-        <button
-          type='submit'
-        >submit
-        </button>
+        <h1 className='heading'>Login</h1>
+        <form onSubmit={handleSubmit} className='.form'>
+          <div className='form-item'>
 
-        <button
-          type='button'
-          onClick={handleNavigate}
-        >Goto Register</button>
-      </form>
-    </>
+            <label> email </label>
+            <input
+              value={user.email}
+              name='email'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className='form-item'>
+
+            <label> password </label>
+            <input
+              value={user.password}
+              name='password'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-btn">
+
+            <button
+              type='submit'
+            >submit
+            </button>
+
+            <button
+              type='button'
+              onClick={handleNavigate}
+            >Goto Register</button>
+          </div>
+        </form>
+      </div>
+    </main>
   );
 };
 

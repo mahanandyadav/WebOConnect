@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import constant from '../config'
-import {useNavigate} from 'react-router-dom'
+import '../style/register.css'
+import { useNavigate } from 'react-router-dom'
 const defaultUser = {
   name: 'mahanand',
   email: 'mny@gmail.com',
@@ -12,7 +13,7 @@ const defaultUser = {
 
 const Register = () => {
   const [user, setUser] = useState(defaultUser)
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   const handleOnChange = (e) => {
     const { name, value } = e.target
@@ -49,49 +50,76 @@ const Register = () => {
 
 
   return (
-    <>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <label> name </label>
-        <input
-          value={user.name}
-          name='name'
-          onChange={handleOnChange}
-        />
-        <label> email </label>
-        <input
-          value={user.email}
-          name='email'
-          onChange={handleOnChange}
-        />
-        <label> password </label>
-        <input
-          value={user.password}
-          name='password'
-          onChange={handleOnChange}
-        />
-        <label> gender </label>
-        <input
-          value={user.gender}
-          name='gender'
-          onChange={handleOnChange}
-        />
-        <label> phone </label>
-        <input
-          value={user.phone}
-          name='phone'
-          onChange={handleOnChange}
-        />
-        <label> status </label>
-        <input
-          value={user.status}
-          name='status'
-          onChange={handleOnChange}
-        />
-        <button>submit</button>
-        <button type='button' onClick={()=>navigate('/login')}>Goto Login</button>
-      </form>
-    </>
+    <main className='container'>
+      
+      <div className='container-box'>
+
+        <h1 className='heading'>Register</h1>
+        <form onSubmit={handleSubmit} className='form'>
+          <div className='form-item'>
+
+            <label> name </label>
+            <input
+              value={user.name}
+              name='name'
+              onChange={handleOnChange}
+            />
+          </div>
+
+          <div className='form-item'>
+
+            <label> email </label>
+            <input
+              value={user.email}
+              name='email'
+              onChange={handleOnChange}
+            />
+          </div>
+
+          <div className='form-item'>
+
+            <label> password </label>
+            <input
+              value={user.password}
+              name='password'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className='form-item'>
+
+            <label> gender </label>
+            <input
+              value={user.gender}
+              name='gender'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className='form-item'>
+
+            <label> phone </label>
+            <input
+              value={user.phone}
+              name='phone'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className='form-item'>
+
+            <label> status </label>
+            <input
+              value={user.status}
+              name='status'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className='form-btn'>
+
+            <button>submit</button>
+            <button type='button' onClick={() => navigate('/login')}>Goto Login</button>
+          </div>
+        </form>
+      </div>
+    </main>
   );
 };
 

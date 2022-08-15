@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import constant from '../config'
+import '../style/register.css'
 import { useNavigate } from 'react-router-dom'
 const defaultUser = {
   name: "default",
@@ -17,19 +18,19 @@ const UserUpdate = () => {
 
 
   useEffect(async () => {
-    const userData=(await getDetails())
+    const userData = (await getDetails())
     setUser({
-      name:userData.name,
-      email:userData.email,
-      phone:userData.phone,
-      gender:userData.gender,
-      status:userData.status,
+      name: userData.name,
+      email: userData.email,
+      phone: userData.phone,
+      gender: userData.gender,
+      status: userData.status,
     })
   }, [])
 
   const handleOnChange = (e) => {
     const { name, value } = e.target
-    console.log(user)
+    // console.log(user)
 
     setUser({
       ...user,
@@ -80,7 +81,8 @@ const UserUpdate = () => {
 
       if (res.ok) {
         // alert('update successfully')
-        console.log(await res.json())
+        // console.log(await res.json())
+        console.log('user updated')
       } else {
         console.log(res)
       }
@@ -93,46 +95,67 @@ const UserUpdate = () => {
 
 
   return (
-    <>
-      <h1>User Update</h1>
-      <form onSubmit={handleSubmit}>
-        <label> name </label>
-        <input
-          value={name}
-          name='name'
-          onChange={handleOnChange}
-        />
-        <label> email </label>
-        <input
-          value={email}
-          name='email'
-          onChange={handleOnChange}
-        />
+    <main className='container'>
+      <div className="container-box">
 
-        <label> gender </label>
-        <input
-          value={gender}
-          name='gender'
-          onChange={handleOnChange}
-        />
-        <label> phone </label>
-        <input
-          value={phone}
-          name='phone'
-          onChange={handleOnChange}
-        />
-        <label> status </label>
-        <input
-          value={status}
-          name='status'
-          onChange={handleOnChange}
-        />
-        <button>submit</button>
-        <button type='button' onClick={() => navigate('../details')}>Goto details</button>
-      </form>
+        <h1 className='heading'>User Update</h1>
+        <form onSubmit={handleSubmit} className='form'>
+          <div className="form-item">
+
+            <label> name </label>
+            <input
+              value={name}
+              name='name'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-item">
+
+            <label> email </label>
+            <input
+              value={email}
+              name='email'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-item">
 
 
-    </>
+            <label> gender </label>
+            <input
+              value={gender}
+              name='gender'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-item">
+
+            <label> phone </label>
+            <input
+              value={phone}
+              name='phone'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-item">
+
+            <label> status </label>
+            <input
+              value={status}
+              name='status'
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="form-btn">
+
+            <button>submit</button>
+            <button type='button' onClick={() => navigate('../details')}>Goto details</button>
+          </div>
+        </form>
+
+
+      </div>
+    </main>
   );
 };
 
