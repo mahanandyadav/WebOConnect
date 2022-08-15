@@ -3,3 +3,46 @@
     margin: 0;
     padding: 0;
 }
+
+/*  */
+
+.container{
+    height: 90vh;
+    display: grid;
+    place-content: center;
+    /* background: #000; */
+}
+
+.container-box{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.form-item{
+    text-transform: capitalize;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin: 10px 0;
+}
+
+
+.form-item input{
+    padding: 2px;
+}
+
+.form-btn{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+.form-btn button{
+    padding: 2px;
+    text-transform: capitalize;
+}
+
+.heading{
+    text-align: center;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import constant from '../config'
-import '../style/register.css'
 import { useNavigate } from 'react-router-dom'
 const defaultUser = {
   name: 'mahanand',

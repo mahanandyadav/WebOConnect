@@ -7,7 +7,6 @@ import Status from './Status';
 import { Routes, Route } from 'react-router-dom'
 import Login from './Login';
 import '../style/global.css'
-import '../style/register.css'
 const App = () => {
 
   return (
