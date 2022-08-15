@@ -1,4 +1,5 @@
 const express=require('express')
+const path=require('path')
 const app=new express()
 const userRoute=require('./src/users/users.routes')
 require('dotenv').config()
@@ -18,6 +19,15 @@ app.use((req,res,next)=>{
 })
 
 app.use(userRoute)
+
+const publicPath=path.resolve(__dirname,'..','ui','dist')
+if(process.env.NODE_ENV==='development'){
+    app.use(express.static(publicPath))
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(publicPath,'index.html'))
+    })
+}
+
 
 const port=process.env.PORT || 3001
 app.listen(port,(error)=>{

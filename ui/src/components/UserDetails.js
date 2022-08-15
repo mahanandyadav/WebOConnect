@@ -87,10 +87,10 @@ const UserDetails = () => {
       </div>
       <div className="form-btn">
 
-      <Link
-        to='../update'
+      <button
+        onClick={()=>navigate('../update')}
         >Update Details
-      </Link>
+      </button>
 
 
       <button
