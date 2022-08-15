@@ -46,3 +46,11 @@
 .heading{
     text-align: center;
 }
+
+.logoutUser {
+    cursor: pointer;
+}
+
+.deleteUser{
+    cursor: pointer;
+}

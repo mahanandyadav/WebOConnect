@@ -68,10 +68,10 @@ export default function Status() {
   return (
     <>
       {sessionStorage.getItem('userToken')?.length > 0 ?
-        <div onClick={logoutUser}>Logged in as {sessionStorage.getItem('userName')}</div>
+        <div className='logoutUser' onClick={logoutUser}>Logged in as {sessionStorage.getItem('userName')}</div>
         :
         <div>logged out</div>}
-        <div  onClick={deleteUser}>delete user</div>
+        <div className='deleteUser' onClick={deleteUser}>delete user</div>
       <Outlet />
     </>
 
